@@ -1,7 +1,7 @@
 <?php
 
 use App\Post;
-use App\Services\PostService;
+use App\Services\Post\PostService;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class PostServiceTest extends TestCase
