@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\Post;
 
-use App\Repositories\PostRepository;
+use App\Repositories\Post\PostRepository;
 use Illuminate\Database\Eloquent\Collection;
 
 class PostService
