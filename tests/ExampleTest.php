@@ -1,11 +1,13 @@
 <?php
 
-use Illuminate\Foundation\Testing\WithoutMiddleware;
+use App\Post;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class ExampleTest extends TestCase
 {
+
+    use DatabaseMigrations;
+
     /**
      * A basic functional test example.
      *
@@ -15,5 +17,18 @@ class ExampleTest extends TestCase
     {
         $this->visit('/')
              ->see('Laravel 5');
+    }
+
+    /** @test */
+    public function SQLiteInMemory連線()
+    {
+        /** arrange */
+        $expected = 0;
+
+        /** act */
+        $actual = Post::all();
+
+        /** assert */
+        $this->assertCount($expected, $actual);
     }
 }
